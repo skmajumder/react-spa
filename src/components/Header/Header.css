@@ -1,0 +1,33 @@
+.header {
+  background: #1c2b35;
+  padding: 0 3rem;
+}
+
+.header,
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  gap: 3rem;
+}
+
+.nav-list a {
+  font-size: 1.7rem;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.nav-list a:hover {
+  color: #ff9900;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+}
