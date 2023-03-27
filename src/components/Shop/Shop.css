@@ -1,3 +1,61 @@
+.shop-products {
+  padding: 10rem 0;
+}
+
 .shop-grid {
   grid-template-columns: 80fr 20fr;
+  column-gap: 5rem;
+}
+
+.shop-products-grid {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+  row-gap: 3rem;
+}
+
+.shop-cart {
+  padding: 3rem 1.6rem;
+  background: rgba(255, 153, 0, 0.3);
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5rem;
+}
+
+.cart-details {
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  font-size: 1.4rem;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #2a414f;
+}
+
+.total-price {
+  font-size: 1.8rem;
+  color: #0e161a;
+}
+
+.btn-cart,
+.btn-review {
+  display: inline-block;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #ffffff;
+  font-family: inherit;
+  padding: 1.2rem 2rem;
+  cursor: pointer;
+}
+
+.btn-cart {
+  margin-bottom: 1.6rem;
+  background: #ff3030;
+}
+
+.btn-review {
+  background: #ff9900;
 }
