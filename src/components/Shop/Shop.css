@@ -1,0 +1,3 @@
+.shop-grid {
+  grid-template-columns: 80fr 20fr;
+}
