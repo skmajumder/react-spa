@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 
@@ -8,9 +9,13 @@ const Shop = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("products.json");
-      const data = await response.json();
-      setProducts(data);
+      try {
+        const response = await fetch("products.json");
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchProducts();
   }, []);
@@ -24,6 +29,7 @@ const Shop = () => {
     <section className="section section-shop">
       <div className="container">
         <div className="d-grid shop-grid">
+          {/* Shop */}
           <div className="shop-products d-grid shop-products-grid">
             {products.map((product) => (
               <Product
@@ -33,22 +39,10 @@ const Shop = () => {
               ></Product>
             ))}
           </div>
-          <div className="shop-cart-wrapper">
-            <div className="d-flex shop-cart">
-              <h3 className="text-center">Order Summary</h3>
-              <div className="d-flex cart-details">
-                <p>Selected Items: {cart.length}</p>
-                <p>Total Price: $1140</p>
-                <p>Total Shipping Charge: $5</p>
-                <p>Tax: $114</p>
-                <p className="total-price">Grand Total: $1559</p>
-              </div>
-              <div className="cart-button">
-                <button className="btn-cart">Clear Cart</button>
-                <button className="btn-review">Review Order</button>
-              </div>
-            </div>
-          </div>
+          {/* Sidebar */}
+          <aside className="shop-cart-wrapper">
+            <Cart cart={cart}></Cart>
+          </aside>
         </div>
       </div>
     </section>
