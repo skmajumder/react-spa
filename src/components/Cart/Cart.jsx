@@ -3,8 +3,7 @@ import "./Cart.css";
 
 const Cart = (props) => {
   const { cart } = props;
-
-  // console.log(cart);
+  console.log(cart);
 
   let sum = 0;
   let shippingCharge = 0;
@@ -19,7 +18,7 @@ const Cart = (props) => {
     <div className="d-flex shop-cart">
       <h3 className="text-center">Order Summary</h3>
       <div className="d-flex cart-details">
-        <p>Selected Items: {cart.length}</p>
+        <p>Selected Items: </p>
         <p>Total Price: ${sum}</p>
         <p>Shipping Charge: ${shippingCharge}</p>
         <p>Tax: ${tax.toFixed(2)}</p>

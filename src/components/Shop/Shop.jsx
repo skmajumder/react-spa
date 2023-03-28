@@ -23,11 +23,16 @@ const Shop = () => {
 
   useEffect(() => {
     const storedCart = getShoppingCart();
-    // console.log(storedCart);
-    for (const [key, value] of Object.entries(storedCart)) {
-      console.log(key, value);
+    const savedCart = [];
+    if (products.length !== 0) {
+      for (const [id, productQuantity] of Object.entries(storedCart)) {
+        const savedProduct = products.find((product) => product.id === id);
+        savedProduct.quantity = productQuantity;
+        savedCart.push(savedProduct);
+      }
+      setCart(savedCart);
     }
-  }, []);
+  }, [products]);
 
   const addToCart = (product) => {
     const newCart = [...cart, product];
