@@ -10,6 +10,7 @@ const Product = (props) => {
     seller: manufacturer,
     ratings,
   } = props.product;
+
   return (
     <div className="d-flex product">
       <div className="product-inner">

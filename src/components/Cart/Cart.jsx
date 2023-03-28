@@ -4,13 +4,15 @@ import "./Cart.css";
 const Cart = (props) => {
   const { cart } = props;
 
+  // console.log(cart);
+
   let sum = 0;
   let shippingCharge = 0;
   for (const iterator of cart) {
     sum += iterator.price;
     shippingCharge += iterator.shipping;
   }
-  const tax = (sum * 0.02).toFixed(2);
+  const tax = sum * 0.02;
   const grandTotal = sum + shippingCharge + tax;
 
   return (
@@ -20,8 +22,8 @@ const Cart = (props) => {
         <p>Selected Items: {cart.length}</p>
         <p>Total Price: ${sum}</p>
         <p>Shipping Charge: ${shippingCharge}</p>
-        <p>Tax: ${tax}</p>
-        <p className="total-price">Grand Total: ${grandTotal}</p>
+        <p>Tax: ${tax.toFixed(2)}</p>
+        <p className="total-price">Grand Total: ${grandTotal.toFixed(2)}</p>
       </div>
       <div className="cart-button">
         <button className="btn-cart">Clear Cart</button>
