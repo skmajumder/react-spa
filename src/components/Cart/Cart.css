@@ -4,6 +4,8 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 5rem;
+  position: sticky;
+  top: 1rem;
 }
 
 .cart-details {
